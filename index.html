@@ -2,35 +2,40 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico|Roboto+Condensed|Sigmar+One" rel="stylesheet">
+
+
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-			
+		
+		setInterval(getNewMessage, 3000);
+				
+
         for(var i = 0; i<geemails.length; i++){
-					var subjectBox = document.createElement('p');
+					var subjectBox = document.createElement('li');
 					subjectBox.className = 'sub';
 					subjectBox.innerHTML = geemails[i].subject;
 					what.appendChild(subjectBox);
 					
-				
-			}
-
-				for(var i = 0; i<geemails.length;i++){
-					var senderBox = document.createElement('p');
+					var senderBox = document.createElement('li');
 					senderBox.className = 'send';
 					senderBox.innerHTML = geemails[i].sender;
 					who.appendChild(senderBox);
-				}
-
-				for(var i = 0; i<geemails.length; i++){
+				
 					var bodyBox = document.createElement('p');
 					bodyBox.className = 'bod';
 					bodyBox.innerHTML = geemails[i].body;
 					subjectBox.appendChild(bodyBox);
 
-					console.log(subjectBox)
-				}
+					var dateBox = document.createElement('p');
+					dateBox.className = 'when';
+					dateBox.innerHTML = geemails[i].date;
+					bodyBox.appendChild(dateBox);
+
+					
+		}
 
 				
 
@@ -48,27 +53,37 @@
 					}else{
 						getMsg.style.display = 'block';
 					}
+	
 				}
 
-	
 				
+				
+	
 		
 			};
 			
     </script>
 	</head>
 	<body>
-		<h2>Gee-Mail</h2>
+		<h2><span id='letter'>G</span>ee-<span id='letter'>M</span>ail</h2>
 		<div class="container" id="main">
-		<span id="msgcount">Messages: </span><br>	
-		
-			<li class="message1">Date </li>
-			<li class="message1">Sender</li>
-			<li class="message1">Subject</li>
-			</div><br><br><br>
 			
+		<div id="category">
+			<li class="message1">Inbox </li><br>
+			<li class="message1">Draft</li><br>
+			<li class="message1">Sent</li><br>
+			<li class="message1">Spam</li><br>
+			<li class="message1">Trash</li></div>
+			</div><br><br><br>
+			<table style="width:100%">
+				<tr>
+				  <th>Sender</th>
+				  <th>Subject</th> 
+				
+			  </table>
+			<div class="contents">
 			<div id="who"></div>
-			<div id="what"></div>
+			<div id="what"></div></div></div>
 			
 			
 			
