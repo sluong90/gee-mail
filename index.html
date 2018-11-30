@@ -5,14 +5,72 @@
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+			
+        for(var i = 0; i<geemails.length; i++){
+					var subjectBox = document.createElement('p');
+					subjectBox.className = 'sub';
+					subjectBox.innerHTML = geemails[i].subject;
+					what.appendChild(subjectBox);
+					
+				
+			}
+
+				for(var i = 0; i<geemails.length;i++){
+					var senderBox = document.createElement('p');
+					senderBox.className = 'send';
+					senderBox.innerHTML = geemails[i].sender;
+					who.appendChild(senderBox);
+				}
+
+				for(var i = 0; i<geemails.length; i++){
+					var bodyBox = document.createElement('p');
+					bodyBox.className = 'bod';
+					bodyBox.innerHTML = geemails[i].body;
+					subjectBox.appendChild(bodyBox);
+
+					console.log(subjectBox)
+				}
+
+				
+
+				var divElem = document.getElementsByClassName('sub');
+
+				for(var i = 0; i<divElem.length; i++){
+					divElem[i].addEventListener('click', showMsg);
+				}
+
+
+				function showMsg(){
+					var getMsg = this.querySelectorAll('.bod')[0];
+					if(getMsg.style.display === 'block'){
+						getMsg.style.display = 'none';
+					}else{
+						getMsg.style.display = 'block';
+					}
+				}
+
+	
+				
+		
+			};
+			
     </script>
 	</head>
 	<body>
+		<h2>Gee-Mail</h2>
 		<div class="container" id="main">
-			Build Me!
-		</div>
+		<span id="msgcount">Messages: </span><br>	
+		
+			<li class="message1">Date </li>
+			<li class="message1">Sender</li>
+			<li class="message1">Subject</li>
+			</div><br><br><br>
+			
+			<div id="who"></div>
+			<div id="what"></div>
+			
+			
+			
 	</body>
 </html>

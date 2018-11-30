@@ -1,0 +1,33 @@
+body{
+    background-color: palevioletred;
+}
+
+h2{
+    font-size:
+    50px;
+    color: white;
+    text-shadow: gray 3px 3px 5px;
+    text-align: center;
+}
+
+.message1{
+    display: inline;
+}
+
+
+#who{
+    float: left;
+    width: 200px;
+}
+
+#what{
+    float: left;
+    width: 250px;
+    padding: 0px 20px;
+}
+
+.bod{
+    display: none;
+}
+
+
