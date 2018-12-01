@@ -10,13 +10,14 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 		
-		setInterval(getNewMessage, 3000);
-				
+		
+			
 
         for(var i = 0; i<geemails.length; i++){
 					var subjectBox = document.createElement('li');
 					subjectBox.className = 'sub';
 					subjectBox.innerHTML = geemails[i].subject;
+					subjectBox.addEventListener ('click', showMsg)
 					what.appendChild(subjectBox);
 					
 					var senderBox = document.createElement('li');
@@ -34,19 +35,13 @@
 					dateBox.innerHTML = geemails[i].date;
 					bodyBox.appendChild(dateBox);
 
-					
+					var msgCount = document.getElementById('inboxCnt');
+					msgCount.innerHTML = 'Inbox ' + geemails.length;
+		 
+							
 		}
 
-				
-
-				var divElem = document.getElementsByClassName('sub');
-
-				for(var i = 0; i<divElem.length; i++){
-					divElem[i].addEventListener('click', showMsg);
-				}
-
-
-				function showMsg(){
+		function showMsg(){
 					var getMsg = this.querySelectorAll('.bod')[0];
 					if(getMsg.style.display === 'block'){
 						getMsg.style.display = 'none';
@@ -55,6 +50,47 @@
 					}
 	
 				}
+
+				
+				// var divElem = document.getElementsByClassName('sub');
+
+				// for(var i = 0; i<divElem.length; i++){
+				// 	divElem[i].addEventListener('click', showMsg);
+				// }
+				
+			 	function getMoreMail(){
+			 	var newMail = getNewMessage();
+				
+
+			 	 var newSubjectBox = document.createElement('li');
+			 	 newSubjectBox.className = 'sub';
+				  newSubjectBox.innerHTML = newMail.subject;
+				  //newSubjectBox.addEventListener('click',)
+			 	 what.appendChild(newSubjectBox);
+
+			 	var newSenderBox = document.createElement('li');
+			 	newSenderBox.className = 'send';
+				newSenderBox.innerHTML = newMail.sender;
+				who.appendChild(newSenderBox);
+
+				var newBodyBox = document.createElement('p');
+				newBodyBox.className = 'bod';
+				newBodyBox.innerHTML = newMail.body;
+				subjectBox.appendChild(newBodyBox);
+
+				var newDateBox = document.createElement('p');
+				newDateBox.className = 'when';
+				newDateBox.innerHTML = newMail.date;
+				bodyBox.appendChild(newDateBox);
+
+			
+				
+			 }
+				 
+
+				
+
+		setInterval(getMoreMail, 3000);
 
 				
 				
@@ -69,7 +105,7 @@
 		<div class="container" id="main">
 			
 		<div id="category">
-			<li class="message1">Inbox </li><br>
+			<li id="inboxCnt"></li><br>
 			<li class="message1">Draft</li><br>
 			<li class="message1">Sent</li><br>
 			<li class="message1">Spam</li><br>
