@@ -50,13 +50,10 @@
 					}
 	
 				}
-
 				
-				// var divElem = document.getElementsByClassName('sub');
 
-				// for(var i = 0; i<divElem.length; i++){
-				// 	divElem[i].addEventListener('click', showMsg);
-				// }
+			
+				
 				
 			 	function getMoreMail(){
 			 	var newMail = getNewMessage();
@@ -65,7 +62,7 @@
 			 	 var newSubjectBox = document.createElement('li');
 			 	 newSubjectBox.className = 'sub';
 				  newSubjectBox.innerHTML = newMail.subject;
-				  //newSubjectBox.addEventListener('click',)
+				  newSubjectBox.addEventListener('click', showMsg)
 			 	 what.appendChild(newSubjectBox);
 
 			 	var newSenderBox = document.createElement('li');
@@ -76,21 +73,30 @@
 				var newBodyBox = document.createElement('p');
 				newBodyBox.className = 'bod';
 				newBodyBox.innerHTML = newMail.body;
-				subjectBox.appendChild(newBodyBox);
+				newSubjectBox.appendChild(newBodyBox);
 
 				var newDateBox = document.createElement('p');
 				newDateBox.className = 'when';
 				newDateBox.innerHTML = newMail.date;
-				bodyBox.appendChild(newDateBox);
+				newBodyBox.appendChild(newDateBox);
 
+				var inboxMsgCount = document.getElementById('inboxCnt');
+				inboxMsgCount.innerHTML = 'Inbox: ' + geemails.length++;
+				
+				 }
 			
-				
+			 function showMsg(){
+				 var getMsg = this.querySelectorAll('.bod')[0];
+				 if(getMsg.style.display === 'block'){
+					 getMsg.style.display = 'none';
+				 }else{
+					 getMsg.style.display = 'block';
+				 }
 			 }
-				 
 
 				
 
-		setInterval(getMoreMail, 3000);
+		setInterval(getMoreMail, 15000);
 
 				
 				
