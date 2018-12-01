@@ -11,13 +11,13 @@
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 		
 		
-			
+		
 
         for(var i = 0; i<geemails.length; i++){
 					var subjectBox = document.createElement('li');
 					subjectBox.className = 'sub';
 					subjectBox.innerHTML = geemails[i].subject;
-					subjectBox.addEventListener ('click', showMsg)
+					subjectBox.addEventListener ('click', showMsg);
 					what.appendChild(subjectBox);
 					
 					var senderBox = document.createElement('li');
@@ -51,7 +51,6 @@
 	
 				}
 				
-
 			
 				
 				
@@ -96,7 +95,7 @@
 
 				
 
-		setInterval(getMoreMail, 15000);
+		setInterval(getMoreMail, 10000);
 
 				
 				
@@ -107,7 +106,9 @@
     </script>
 	</head>
 	<body>
-		<h2><span id='letter'>G</span>ee-<span id='letter'>M</span>ail</h2>
+	
+		<h2><span id='letter'>G</span>ee-<span id='letter'>M</span>ail <img src="http://www.bi-notes.com/wp-content/uploads/2015/09/blue-mail-icon.png" alt="logo"><img src="https://lh3.googleusercontent.com/-_LHqXLRQaDQ/VcDiQ5qQn-I/AAAAAAAAABY/oE6OqQj__mo/w340-h340/ninjo.png" id="icon"alt="avatar"><span id='bye'>Logout</span></h2>
+
 		<div class="container" id="main">
 			
 		<div id="category">
@@ -116,8 +117,9 @@
 			<li class="message1">Sent</li><br>
 			<li class="message1">Spam</li><br>
 			<li class="message1">Trash</li></div>
-			</div><br><br><br>
-			<table style="width:100%">
+			</div><br><br>
+			<input type="text" placeholder="Search..">
+			<table style="width:100%"><br>
 				<tr>
 				  <th>Sender</th>
 				  <th>Subject</th> 

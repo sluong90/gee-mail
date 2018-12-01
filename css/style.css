@@ -1,23 +1,40 @@
 body{
-    background-color: palevioletred;
-    background-image: url(https://mocak.am/wp-content/uploads/2011/11/Ampik.jpg);
+
+    background-image: url(https://mocak.am/wp-content/uploads/2011/11/Ampik.jpg), url(https://images.wallpaperscraft.com/image/paper_airplanes_sky_flight_67453_1920x1080.jpg);
     background-size: cover;
+    background-blend-mode: multiply;
+    
 }
 
 h2{
     font-size:
     70px;
-    color: white;
-    text-shadow: gray 3px 3px 5px;
+    color: whitesmoke;
+    text-shadow: rosybrown 3px 3px 5px;
     text-align: center;
     font-family: 'Pacifico', cursive;
+
+}
+
+img{
+    width: 90px;
+}
+
+#icon{
+    width: 70px;
+    float: right;
+}
+#bye{
+    float: right;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
 
 }
 
 #letter{
     font-family: 'Sigmar One', cursive;
     font-size: 100px;
-    text-shadow: red 1px 1px 1px;
+    text-shadow: 2px 1px 1px darkblue;
     color: palegoldenrod;
 }
 
@@ -31,6 +48,35 @@ h2{
     display: inline;
     font-family: 'Roboto Condensed', sans-serif;
     text-shadow: white 1px 7px 10px;
+
+
+}
+
+#inboxCnt:hover{
+    background-color: lightpink;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.message1:hover{
+    background-color: lightpink;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+input{
+    width: 650px;
+    height: 30px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid grey;
+    border-radius: 5px;
+    font-size: 15px;
+    background-image: url(http://www.stickpng.com/assets/images/585e4ad1cb11b227491c3391.png);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    padding: 12px 20px 12px 25px;
 
 }
 
@@ -88,7 +134,8 @@ table{
 }
 
 .when{
-    font-size: 10px;
+    font-size: 13px;
+    color: darkmagenta;
   
 }
 
